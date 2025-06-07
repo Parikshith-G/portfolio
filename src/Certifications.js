@@ -102,6 +102,15 @@ const certifications = [
       },
     ],
   },
+  {
+    title: "Microsoft",
+    providers: [
+      {
+        name: "Microsoft Azure AZ 900",
+        link: "https://learn.microsoft.com/api/credentials/share/en-us/GParikshith-1306/455345456C59CEDB?sharingId=EA391A80288803F4",
+      },
+    ],
+  },
 ];
 
 export default function Certifications() {
