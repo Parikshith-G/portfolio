@@ -1,10 +1,9 @@
 import logo from "./logo.svg";
 import "./App.css";
-import Portfolio from "./Portfolio";
-import DragonTrail from "./Dragon";
-import DragonTrailOne from "./Dragon1";
-import RainbowTrail from "./Rainbow";
-import SmoothRainbowTrail from "./SmoothhRainbow";
+
+import SmoothRainbowTrail from "./SmoothRainbow/SmoothhRainbow";
+import RainbowTrail from "./Rainbow/Rainbow";
+import Portfolio from "./Portfolio/Portfolio";
 
 function App() {
   return (
@@ -13,7 +12,7 @@ function App() {
       {/* <DragonTrailOne /> */}
       {/* <RainbowTrail /> */}
       <SmoothRainbowTrail />
-      <Portfolio />
+      <Portfolio/>
     </div>
   );
 }

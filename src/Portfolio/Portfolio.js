@@ -1,12 +1,11 @@
-import React, { useEffect, useRef } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import TopVideos from "./Youtube";
-import AboutMe from "./AboutMe";
-import Skills from "./Skills";
-import Projects from "./Projects";
-import Experience from "./Experience";
-import MainLinks from "./MainLinks";
-import Certifications from "./Certifications";
+import AboutMe from "../AboutMe/AboutMe";
+import Skills from "../Skills/Skills";
+import Projects from "../Projects/Projects";
+import Experience from "../Experience/Experience";
+
+import Certifications from "../Certifications/Certifications";
+import MainLinks from "../MainLinks/MainLinks";
 
 export default function Portfolio() {
   return (
@@ -34,7 +33,7 @@ export default function Portfolio() {
       <Experience />
 
       <Skills />
-      
+
       <Certifications />
       <Projects />
 
