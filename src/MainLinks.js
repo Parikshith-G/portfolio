@@ -35,7 +35,7 @@ const MainLinks = () => {
           className="btn btn-outline-primary"
           download
         >
-          Resume
+          Resume (Click will download resume)
         </a>
       </div>
     </>
