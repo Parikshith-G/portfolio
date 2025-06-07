@@ -31,7 +31,7 @@ const MainLinks = () => {
           Email
         </a>{" "}
         <a
-          href="/Parikshith.G.pdf"
+          href={`${process.env.PUBLIC_URL}/Parikshith.G.pdf`}
           className="btn btn-outline-primary"
           download
         >
