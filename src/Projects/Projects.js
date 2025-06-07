@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./Projects.css";
 
 const projects = [
@@ -65,9 +65,46 @@ const projects = [
 ];
 
 const Projects = () => {
-  const [index, setIndex] = useState(0);
+  const [rotation, setRotation] = useState(0);
+  const anglePerCard = 360 / projects.length;
+  const autoRotateInterval = useRef(null); // Use useRef to hold the interval ID
+  const [isAutoRotating, setIsAutoRotating] = useState(true);
+
+  // Function to start auto-rotation
+  const startAutoRotate = () => {
+    if (autoRotateInterval.current) {
+      clearInterval(autoRotateInterval.current); // Clear any existing interval
+    }
+    autoRotateInterval.current = setInterval(() => {
+      setRotation((prev) => prev + anglePerCard); // Rotate one step
+    }, 2300); // Rotate every 3 seconds (adjust as needed)
+    setIsAutoRotating(true);
+  };
+
+  // Function to stop auto-rotation
+  const stopAutoRotate = () => {
+    if (autoRotateInterval.current) {
+      clearInterval(autoRotateInterval.current);
+      autoRotateInterval.current = null; // Clear the ref
+    }
+    setIsAutoRotating(false);
+  };
+
+  // Effect to start auto-rotation when the component mounts
+  // And clean up when it unmounts
+  useEffect(() => {
+    startAutoRotate();
+
+    return () => {
+      stopAutoRotate(); // Clean up the interval when the component unmounts
+    };
+  }, []); // Empty dependency array means this runs once on mount and once on unmount
+
   const rotate = (dir) => {
-    setIndex((prev) => (prev + dir + projects.length) % projects.length);
+    stopAutoRotate(); // Stop auto-rotation when a button is clicked
+    setRotation((prev) => prev + dir * anglePerCard);
+    // You could optionally restart auto-rotation after a short delay here
+    setTimeout(startAutoRotate, 5000);
   };
 
   return (
@@ -76,36 +113,15 @@ const Projects = () => {
       <div className="carousel-3d-container">
         <div
           className="carousel-3d"
-          style={{
-            transform: `rotateY(${-index * (360 / projects.length)}deg)`,
-          }}
+          style={{ transform: `rotateY(${-rotation}deg)` }}
         >
-          {/* {projects.map((p, i) => (
-            <div className="carousel-face" key={i}>
-              <div className="card bg-secondary text-white">
-                <div className="card-body">
-                  <h5 className="card-title">{p.title}</h5>
-                  <h6 className="card-subtitle mb-2 text-light">{p.tech}</h6>
-                  <p className="card-text">{p.desc}</p>
-                  <a
-                    href={p.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-info"
-                  >
-                    GitHub →
-                  </a>
-                </div>
-              </div>
-            </div>
-          ))} */}
           {projects.map((p, i) => {
-            const angle = (360 / projects.length) * i;
+            const angle = i * anglePerCard;
             return (
               <div
                 className="carousel-face"
                 key={i}
-                style={{ transform: `rotateY(${angle}deg) translateZ(450px)` }}
+                style={{ transform: `rotateY(${-angle}deg) translateZ(450px)` }}
               >
                 <div className="card bg-secondary text-white">
                   <div className="card-body">
