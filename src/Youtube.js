@@ -657,67 +657,6 @@ export default function TopVideos({ isDropdownOpen, setIsDropdownOpen }) {
   return (
     <>
       {/* This is your hover trigger area */}
-      <div
-        // onMouseEnter={handleMouseEnter}
-        // onMouseLeave={handleMouseLeave}
-        style={{
-          display: "inline-block",
-          cursor: "pointer",
-          userSelect: "none",
-        }}
-      >
-        <div
-          className="deck-card"
-          style={{
-            width: "300px",
-            height: "280px",
-            margin: "20px",
-            cursor: "pointer",
-            border: "1px solid #ccc",
-            borderRadius: "8px",
-            boxShadow: isDropdownOpen
-              ? "0 8px 16px rgba(0,0,0,0.3)"
-              : "0 2px 8px rgba(0,0,0,0.15)",
-            padding: "12px",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            background: isDropdownOpen ? "#1a1a1a" : "#2c2c2c",
-            color: isDropdownOpen ? "white" : "#ddd",
-            userSelect: "none",
-            transition: "all 3s ease",
-            position: "relative",
-          }}
-        >
-          <h4 style={{ margin: 0, userSelect: "none" }}>
-            Top Videos on My Channel
-          </h4>
-          <p
-            style={{
-              marginTop: 6,
-              fontSize: "14px",
-              color: isDropdownOpen ? "#bbb" : "#999",
-              userSelect: "none",
-            }}
-          >
-            Hover to preview my 3 most popular uploads
-          </p>
-
-          {/* Down arrow icon */}
-          <div style={{ marginTop: 8 }}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="24"
-              width="24"
-              fill={isDropdownOpen ? "white" : "#999"}
-              viewBox="0 0 24 24"
-            >
-              <path d="M7 10l5 5 5-5H7z" />
-            </svg>
-          </div>
-        </div>
-      </div>
 
       {/* Dropdown container always mounted, opacity + pointer-events used */}
       <div
