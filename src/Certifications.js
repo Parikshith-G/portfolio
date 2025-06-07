@@ -154,6 +154,7 @@ export default function Certifications() {
         <h2 className="text-center mb-4 text-white display-6 fw-bold">
           Certifications
         </h2>
+        <br></br>
 
         <div className="row gy-4">
           {certifications.map((cert, idx) => (

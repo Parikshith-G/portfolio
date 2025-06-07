@@ -4,7 +4,8 @@ const Experience = () => {
   return (
     <section className="py-5 bg-dark text-white">
       <div className="container">
-        <h2 className="h3 fw-semibold border-bottom pb-2 mb-4">Experience</h2>
+        <h2 className="h3 fw-semibold border-bottom pb-2 mb-8">Experience</h2>
+        <br></br>
         <div className="vstack gap-4">
           <div className="card bg-secondary bg-gradient border-0 shadow-sm">
             <div className="card-body">

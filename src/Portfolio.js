@@ -6,7 +6,7 @@ import Skills from "./Skills";
 import Projects from "./Projects";
 import Experience from "./Experience";
 import MainLinks from "./MainLinks";
-import Certifications from "./Certifications"
+import Certifications from "./Certifications";
 
 export default function Portfolio() {
   return (
@@ -32,10 +32,10 @@ export default function Portfolio() {
 
       <AboutMe />
       <Experience />
-   
 
       <Skills />
-      <Certifications/>
+      
+      <Certifications />
       <Projects />
 
       <footer className="text-center py-4 small text-light">
