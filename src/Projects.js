@@ -10,26 +10,62 @@ const Projects = () => {
             {
               title: "Cryptography Web App",
               tech: "Django, Python",
-              link: "https://github.com",
-              desc: "Secure text file encryption using symmetric & asymmetric algorithms.",
+              link: "https://github.com/Parikshith-G/Encryption-and-decryption-website",
+              desc: "Secure text file encryption using custom-made symmetric & asymmetric algorithms.",
             },
             {
               title: "E-Commerce Platform",
               tech: "MERN Stack",
-              link: "https://github.com",
+              link: "https://github.com/Parikshith-G/ecommerce-application-main-project",
               desc: "Responsive app with JWT auth and REST APIs.",
             },
             {
               title: "AI-Driven Flappy Bird",
               tech: "Python, NEAT",
-              link: "https://github.com",
+              link: "https://github.com/Parikshith-G/Flappy-bird-game-and-reinceforcement-learning",
               desc: "AI agent plays Flappy Bird using NEAT neural nets.",
+            },
+            {
+              title: "RBAC(Role Based Authentication)",
+              tech: "Java, Spring Boot, Angular",
+              link: "https://github.com/Parikshith-G/JwtAuth",
+              desc: "A template for RBAC in Springboot and Angular.",
             },
             {
               title: "CiniFlex",
               tech: "Java, Spring Boot, Angular",
-              link: "https://github.com",
+              link: "https://github.com/Parikshith-G/TheaterManagementSystem",
               desc: "Theatre booking microservice with JWT and OTP auth.",
+            },
+            {
+              title: "Gesture-Controlled Volume Adjustment using Hand Tracking",
+              tech: "Python, OpenCV, MediaPipe, Hand Tracking, Gesture Recognition, PyCaw",
+              link: "https://github.com/Parikshith-G/Python-advanced",
+              desc: "Controlling some functionality of system using hand gestures.",
+            },
+            {
+              title: "Chess Game Development using Pygame",
+              tech: "Python, Pygame",
+              link: "https://github.com/Parikshith-G/Chess",
+              desc: "Developing Chess in Python and Pygame.",
+            },
+            {
+              title: "Mapty: Workout Tracking and Mapping Application",
+              tech: "HTML, CSS, JavaScript, Leaflet.js",
+              link: "https://github.com/Parikshith-G/Mapty-Js",
+              desc: "A full on exercise mapping application.",
+            },
+            {
+              title: "Forkify: Recipe Management Application",
+              tech: "HTML, CSS, JavaScript",
+              link: "https://github.com/Parikshith-G/Forkify-JS",
+              desc: "A recipe management application.",
+            },
+            {
+              title: "Snake Game in Pygame",
+              tech: " Python, Pygame",
+              link: "https://github.com/Parikshith-G/Snake-Game_PY/tree/master",
+              desc: "Snake Game in Python.",
             },
           ].map((p, i) => (
             <div key={i} className="cylinder-face">
