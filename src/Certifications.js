@@ -27,7 +27,10 @@ const certifications = [
   {
     title: "LinkedIn Learning",
     providers: [
-      { name: "LinkedIn", link: "https://online.fliphtml5.com/vuohl/yjpx/#p%3D1" },
+      {
+        name: "LinkedIn",
+        link: "https://online.fliphtml5.com/vuohl/yjpx/#p%3D1",
+      },
     ],
   },
   {
@@ -137,11 +140,12 @@ export default function Certifications() {
   }, [hoveredCard]);
 
   return (
-    <section className="pt-3 pb-5 bg-dark text-light position-relative">
+    <section className="pt-3 pb-5 bg-dark text-white position-relative">
       <div className="container">
-        <h2 className="text-start mb-4 text-warning display-6 fw-bold">
+        <h2 className="text-center mb-4 text-white display-6 fw-bold">
           Certifications
         </h2>
+
         <div className="row gy-4">
           {certifications.map((cert, idx) => (
             <div key={idx} className="col-md-6 col-lg-4">
@@ -152,7 +156,7 @@ export default function Certifications() {
                 onMouseLeave={handleMouseLeave}
               >
                 <div className="card-body">
-                  <h5 className="card-title text-warning">{cert.title}</h5>
+                  <h5 className="card-title text-white">{cert.title}</h5>
                   <p className="card-text text-light">
                     {cert.providers.map((p, i) => (
                       <span key={i}>
@@ -195,10 +199,7 @@ export default function Certifications() {
                   boxShadow: "0 0 20px rgba(255, 193, 7, 0.3)",
                 }}
               >
-                <h3
-                  className="text-warning mb-3"
-                  style={{ fontSize: "1.75rem" }}
-                >
+                <h3 className="text-white mb-3" style={{ fontSize: "1.75rem" }}>
                   {hoveredCard.title}
                 </h3>
                 {hoveredCard.providers.map((p, i) => (
@@ -215,7 +216,7 @@ export default function Certifications() {
                       href={p.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-warning text-decoration-none"
+                      className="text-white text-decoration-none"
                     >
                       {p.name}
                     </a>
