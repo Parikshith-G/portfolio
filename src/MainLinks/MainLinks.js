@@ -8,7 +8,7 @@ const MainLinks = () => {
         Software Developer | Golang, Scala, Java |{" "}
         <a href="https://leetcode.com/u/Worms_Sama/">
           {" "}
-          {<LeetCodeSolvedCount />} Leetcode Problems
+          {<LeetCodeSolvedCount username={"worms_sama"}/>} Leetcode Problems
         </a>{" "}
         |{" "}
         <a href="https://www.youtube.com/@AlgorithmArena">
