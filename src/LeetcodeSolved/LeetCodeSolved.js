@@ -20,8 +20,8 @@ const LeetCodeSolvedCount = ({ username }) => {
     fetchLeetcodeSolvedCount();
   }, [username]);
 
-  if (error) return <div>Solved: Error loading</div>;
-  if (solved === null) return <div>Solved: Loading...</div>;
+  if (error) return <>Solved: Error loading</>;
+  if (solved === null) return <>Solved: Loading...</>;
 
   return <>{solved}</>;
 };

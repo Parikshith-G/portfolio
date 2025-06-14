@@ -1,11 +1,15 @@
 import React from "react";
+import LeetCodeSolvedCount from "../LeetcodeSolved/LeetCodeSolved";
 
 const MainLinks = () => {
   return (
     <>
       <p className="lead mt-3">
         Software Developer | Golang, Scala, Java |{" "}
-        <a href="https://leetcode.com/u/Worms_Sama/"> 530+ Leetcode Problems</a>{" "}
+        <a href="https://leetcode.com/u/Worms_Sama/">
+          {" "}
+          {<LeetCodeSolvedCount />} Leetcode Problems
+        </a>{" "}
         |{" "}
         <a href="https://www.youtube.com/@AlgorithmArena">
           YouTube: Algorithm Arena
