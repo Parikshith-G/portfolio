@@ -6,6 +6,8 @@ import Experience from "../Experience/Experience";
 
 import Certifications from "../Certifications/Certifications";
 import MainLinks from "../MainLinks/MainLinks";
+import VisitorCounter from "../VisitCount/Visit";
+import LeetCodeSolvedCount from "../LeetcodeSolved/LeetCodeSolved";
 
 export default function Portfolio() {
   return (
@@ -38,8 +40,12 @@ export default function Portfolio() {
       <Projects />
 
       <footer className="text-center py-4 small text-light">
-        © 2025 Parikshith G | Algorithm Arena
+        © 2025 Parikshith G |{" "}
+        <a href="https://www.youtube.com/channel/UC5v8C67iY-vBGVPhiWZbhcQ">
+          Algorithm Arena
+        </a>
       </footer>
     </main>
   );
 }
+ 

@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import TopVideos from "../YouTube/Youtube";
+import LeetCodeSolvedCount from "../LeetcodeSolved/LeetCodeSolved";
 
 // export default function AboutMe() {
 //   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -51,9 +52,9 @@ export default function AboutMe() {
         scalable backend systems using Golang, Scala, Java, and hybrid cloud
         architectures. Skilled in optimizing critical workflows, migrating
         legacy services, and delivering production-ready microservices. Strong
-        foundation in data structures and algorithms, with 530+ problems solved
-        on LeetCode and 160+ algorithm tutorials published on my YouTube
-        channel,{" "}
+        foundation in data structures and algorithms, with{" "}
+        {<LeetCodeSolvedCount username={"worms_sama"} />} problems solved on
+        LeetCode and 160+ algorithm tutorials published on my YouTube channel,{" "}
         <a
           href="#!"
           ref={linkRef}
