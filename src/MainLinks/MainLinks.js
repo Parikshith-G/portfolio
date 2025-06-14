@@ -5,7 +5,7 @@ const MainLinks = () => {
   return (
     <>
       <p className="lead mt-3">
-        Software Developer | Golang, Scala, Java |{" "}
+        Software Developer | Golang, Python, Scala, Java |{" "}
         <a href="https://leetcode.com/u/Worms_Sama/">
           {" "}
           {<LeetCodeSolvedCount username={"worms_sama"}/>} Leetcode Problems
