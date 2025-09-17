@@ -1,18 +1,27 @@
-import logo from "./logo.svg";
-import "./App.css";
-
-import SmoothRainbowTrail from "./SmoothRainbow/SmoothhRainbow";
-import RainbowTrail from "./Rainbow/Rainbow";
-import Portfolio from "./Portfolio/Portfolio";
+import React from 'react';
+import './App.css';
+import Hero from './components/Hero';
+import About from './components/About';
+import Experience from './components/Experience';
+import Skills from './components/Skills';
+import Projects from './components/Projects';
+import Certifications from './components/Certifications';
+import Contact from './components/Contact';
+import Navigation from './components/Navigation';
+import FloatingShapes from './components/FloatingShapes';
 
 function App() {
   return (
     <div className="App">
-      {/* <DragonTrail /> */}
-      {/* <DragonTrailOne /> */}
-      {/* <RainbowTrail /> */}
-      <SmoothRainbowTrail />
-      <Portfolio/>
+      <FloatingShapes />
+      <Navigation />
+      <Hero />
+      <About />
+      <Experience />
+      <Skills />
+      <Projects />
+      <Certifications />
+      <Contact />
     </div>
   );
 }

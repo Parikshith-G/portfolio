@@ -1,80 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background: #0a0a0a;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-
-.cylinder-wrapper {
-  perspective: 1200px;
-  height: 400px;
-  overflow: hidden;
   position: relative;
+  min-height: 100vh;
 }
 
-.cylinder {
-  width: 100%;
-  height: 100%;
-  position: absolute;
+/* Global 3D container */
+.section-3d {
+  perspective: 1000px;
   transform-style: preserve-3d;
-  animation: spin 20s linear infinite;
-  transition: transform 0.5s;
 }
 
-.cylinder-face {
-  position: absolute;
-  width: 300px;
-  left: 50%;
-  top: 50%;
+/* Floating animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotateY(0deg); }
+  50% { transform: translateY(-20px) rotateY(180deg); }
+}
+
+@keyframes floatReverse {
+  0%, 100% { transform: translateY(0px) rotateX(0deg); }
+  50% { transform: translateY(20px) rotateX(180deg); }
+}
+
+@keyframes rotate3d {
+  0% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+  33% { transform: rotateX(360deg) rotateY(0deg) rotateZ(0deg); }
+  66% { transform: rotateX(0deg) rotateY(360deg) rotateZ(0deg); }
+  100% { transform: rotateX(0deg) rotateY(0deg) rotateZ(360deg); }
+}
+
+/* Glow effects */
+.glow-orange {
+  box-shadow: 0 0 20px rgba(255, 165, 0, 0.3), 0 0 40px rgba(255, 165, 0, 0.2);
+}
+
+.glow-gold {
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3), 0 0 40px rgba(255, 215, 0, 0.2);
+}
+
+/* Gradient backgrounds */
+.gradient-dark {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+}
+
+.gradient-orange {
+  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+}
+
+.gradient-gold {
+  background: linear-gradient(135deg, #ffd700 0%, #ffb347 100%);
+}
+
+/* Card 3D effects */
+.card-3d {
   transform-style: preserve-3d;
-  transform-origin: center;
-  transform: rotateY(calc(var(--i) * 90deg)) translateZ(500px) translate(-50%, -50%);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* 4 cards = 360/4 = 90 deg apart */
-.cylinder-face:nth-child(1) { --i: 0; }
-.cylinder-face:nth-child(2) { --i: 1; }
-.cylinder-face:nth-child(3) { --i: 2; }
-.cylinder-face:nth-child(4) { --i: 3; }
+.card-3d:hover {
+  transform: rotateY(10deg) rotateX(5deg) scale(1.05);
+}
 
-@keyframes spin {
-  from {
-    transform: rotateY(0deg);
-  }
-  to {
-    transform: rotateY(-360deg);
-  }
+/* Text selection */
+::selection {
+  background: rgba(255, 165, 0, 0.3);
+  color: #ffffff;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #ff6b35, #f7931e);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #f7931e, #ffd700);
 }
