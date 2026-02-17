@@ -11,6 +11,7 @@ const Projects = () => {
     {
       title: "ResumeGPT – AI Resume Optimizer",
       tech: "React, Spring Boot, LLM API",
+      type: "website",
       link: "https://resumegpt-frontend.onrender.com/",
       desc: "AI-powered resume optimization platform that analyzes resumes against job descriptions and provides ATS-friendly improvements with real-time feedback and validation.",
       category: "AI Application",
@@ -19,70 +20,79 @@ const Projects = () => {
     {
       title: "API Load Tester & Performance Analyzer",
       tech: "Go, React, REST APIs, Concurrency",
+      type: "code",
       link: "https://github.com/Parikshith-G/PerfromanceAPI/tree/master",
-      desc: "High-concurrency API load testing tool. Accepts API URL and thread count, generates concurrent requests, and visualizes accepted vs rejected requests using real-time graphs.",
+      desc: "High-concurrency API load testing tool generating concurrent requests and visualizing accepted vs rejected requests.",
       category: "Backend Systems",
       gradient: "from-red-500 to-orange-500",
     },
     {
       title: "RBAC Authentication System",
       tech: "Java, Spring Boot, Angular, JWT",
+      type: "code",
       link: "https://github.com/Parikshith-G/JwtAuth",
-      desc: "Role-Based Access Control system with JWT authentication and secure authorization layers built using Spring Boot and Angular.",
+      desc: "Role-Based Access Control system with JWT authentication and secure authorization layers.",
       category: "Authentication",
       gradient: "from-yellow-500 to-orange-400",
     },
     {
       title: "CiniFlex – Theatre Booking Microservice",
       tech: "Java, Spring Boot, Angular, JWT, OTP",
+      type: "code",
       link: "https://github.com/Parikshith-G/TheaterManagementSystem",
-      desc: "Microservice-based theatre booking platform with JWT authentication and OTP-based user verification.",
+      desc: "Microservice-based theatre booking platform with JWT authentication and OTP verification.",
       category: "Microservices",
       gradient: "from-orange-400 to-red-400",
     },
     {
       title: "AI-Driven Flappy Bird",
       tech: "Python, NEAT",
+      type: "code",
       link: "https://github.com/Parikshith-G/Flappy-bird-game-and-reinceforcement-learning",
-      desc: "AI agent trained using NEAT (NeuroEvolution of Augmenting Topologies) to autonomously learn and play Flappy Bird.",
+      desc: "AI agent trained using NEAT to autonomously learn and play Flappy Bird.",
       category: "AI/ML",
       gradient: "from-yellow-400 to-orange-500",
     },
     {
       title: "Cryptography Web App",
       tech: "Django, Python",
+      type: "code",
       link: "https://github.com/Parikshith-G/Encryption-and-decryption-website",
-      desc: "Secure text and file encryption web application implementing custom symmetric and asymmetric encryption algorithms.",
+      desc: "Secure text and file encryption web app implementing symmetric and asymmetric encryption.",
       category: "Security",
       gradient: "from-orange-500 to-yellow-400",
     },
     {
       title: "E-Commerce Platform",
       tech: "MERN Stack, JWT",
+      type: "code",
       link: "https://github.com/Parikshith-G/ecommerce-application-main-project",
-      desc: "Full-stack e-commerce platform with secure JWT authentication, REST APIs, and responsive frontend design.",
+      desc: "Full-stack e-commerce platform with secure JWT authentication and REST APIs.",
       category: "Full-Stack",
       gradient: "from-orange-600 to-yellow-500",
     },
     {
       title: "Retro Pong",
       tech: "Python, Pygame",
+      type: "code",
       link: "https://github.com/Parikshith-G/Pong_py",
-      desc: "Recreated the classic Pong arcade game with smooth paddle physics, collision handling, and scoring mechanics.",
+      desc: "Classic Pong arcade game with smooth paddle physics and scoring mechanics.",
       category: "Game Development",
       gradient: "from-orange-400 to-red-500",
     },
     {
       title: "Arcade Snake (Pygame Edition)",
       tech: "Python, Pygame",
+      type: "code",
       link: "https://github.com/Parikshith-G/Snake-Game_PY",
-      desc: "Classic Snake arcade game built using Pygame featuring collision detection, score tracking, and increasing difficulty levels.",
+      desc: "Classic Snake arcade game featuring collision detection and increasing difficulty.",
       category: "Game Development",
       gradient: "from-red-400 to-orange-400",
     },
     {
       title: "Gesture-Controlled Volume Adjustment",
       tech: "Python, OpenCV, MediaPipe, PyCaw",
+      type: "code",
       link: "https://github.com/Parikshith-G/Python-advanced",
       desc: "Computer vision system that controls system volume using real-time hand gesture recognition.",
       category: "Computer Vision",
@@ -91,16 +101,18 @@ const Projects = () => {
     {
       title: "Mapty – Workout Tracking App",
       tech: "HTML, CSS, JavaScript, Leaflet.js",
+      type: "code",
       link: "https://github.com/Parikshith-G/Mapty-Js",
-      desc: "Interactive workout tracking application that visualizes exercise sessions on maps using Leaflet.js.",
+      desc: "Interactive workout tracking app visualizing exercise sessions using Leaflet.js.",
       category: "Web Development",
       gradient: "from-orange-600 to-yellow-500",
     },
     {
       title: "Forkify – Recipe Management",
       tech: "HTML, CSS, JavaScript",
+      type: "code",
       link: "https://github.com/Parikshith-G/Forkify-JS",
-      desc: "Modern JavaScript application for searching, managing, and bookmarking recipes using external APIs.",
+      desc: "Modern JavaScript app for searching and bookmarking recipes using external APIs.",
       category: "Web Development",
       gradient: "from-yellow-500 to-orange-500",
     },
@@ -118,10 +130,6 @@ const Projects = () => {
             </span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-orange-500 to-yellow-500 mx-auto rounded"></div>
-          <p className="text-xl text-gray-400 mt-6 max-w-3xl mx-auto">
-            A collection of projects showcasing expertise in backend systems,
-            AI, authentication, and full-stack development.
-          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -131,7 +139,6 @@ const Projects = () => {
               className="card-3d group"
               onMouseEnter={() => setHoveredProject(index)}
               onMouseLeave={() => setHoveredProject(null)}
-              style={{ animationDelay: `${index * 0.1}s` }}
             >
               <Card
                 className={`h-full bg-gradient-to-br from-gray-900/90 to-gray-800/90 border-2 backdrop-blur-sm transition-all duration-500 ${
@@ -140,23 +147,23 @@ const Projects = () => {
                     : "border-orange-500/20"
                 }`}
               >
-                <CardHeader className="pb-4">
+                <CardHeader>
                   <Badge
                     className={`bg-gradient-to-r ${project.gradient}/20 text-white border border-orange-500/30`}
                   >
                     {project.category}
                   </Badge>
 
-                  <CardTitle className="text-xl text-white leading-tight mt-3">
+                  <CardTitle className="text-xl text-white mt-3">
                     {project.title}
                   </CardTitle>
 
                   <div className="flex flex-wrap gap-1 mt-2">
-                    {project.tech.split(", ").map((tech, techIndex) => (
+                    {project.tech.split(", ").map((tech, i) => (
                       <Badge
-                        key={techIndex}
+                        key={i}
                         variant="secondary"
-                        className="text-xs bg-gray-700/50 text-gray-300 border-gray-600/50"
+                        className="text-xs bg-gray-700/50 text-gray-300"
                       >
                         {tech}
                       </Badge>
@@ -165,27 +172,28 @@ const Projects = () => {
                 </CardHeader>
 
                 <CardContent className="flex flex-col flex-grow">
-                  <p className="text-gray-300 text-sm leading-relaxed mb-6 flex-grow">
+                  <p className="text-gray-300 text-sm mb-6 flex-grow">
                     {project.desc}
                   </p>
 
-                  <div className="flex gap-3 mt-auto">
+                  {/* Centered Button Based On Type */}
+                  <div className="flex justify-center mt-auto">
                     <Button
                       size="sm"
-                      className={`flex-1 bg-gradient-to-r ${project.gradient} hover:scale-105 transition-all duration-300 text-white`}
+                      className={`px-6 bg-gradient-to-r ${project.gradient} hover:scale-105 transition-all duration-300 text-white`}
                       onClick={() => window.open(project.link, "_blank")}
                     >
-                      <Github size={16} className="mr-2" />
-                      Code
-                    </Button>
-
-                    <Button
-                      size="sm"
-                      variant="outline"
-                      className="border-orange-500/50 text-orange-400 hover:bg-orange-500/10 hover:scale-105 transition-all duration-300"
-                      onClick={() => window.open(project.link, "_blank")}
-                    >
-                      <ExternalLink size={16} />
+                      {project.type === "code" ? (
+                        <>
+                          <Github size={16} className="mr-2" />
+                          View Code
+                        </>
+                      ) : (
+                        <>
+                          <ExternalLink size={16} className="mr-2" />
+                          Visit Website
+                        </>
+                      )}
                     </Button>
                   </div>
                 </CardContent>
@@ -197,7 +205,7 @@ const Projects = () => {
         <div className="text-center mt-16">
           <Button
             size="lg"
-            className="bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 text-white px-8 py-3 text-lg font-semibold rounded-lg transform hover:scale-105 transition-all duration-300 glow-orange"
+            className="bg-gradient-to-r from-orange-500 to-yellow-500 text-white px-8 py-3 text-lg font-semibold rounded-lg hover:scale-105 transition-all duration-300"
             onClick={() =>
               window.open("https://github.com/Parikshith-G", "_blank")
             }
