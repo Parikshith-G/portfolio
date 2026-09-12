@@ -35,43 +35,46 @@ export default function About() {
     <div className="section-alt" id="about">
       <div className="section-alt-inner">
         <p className="section-label reveal">About</p>
-        <h2 className="section-title reveal">Who I Am</h2>
+        <h2 className="section-title reveal">Java systems that survive production</h2>
+        <p className="section-kicker reveal">
+          Production Java, observability, and AI tooling on a real telecom client — not a tutorial stack.
+        </p>
         <div className="section-divider reveal" />
 
         <div className="about-grid">
           <div className="about-text reveal">
             <p>
-              Software Engineer with <strong>2+ years</strong> building production-grade Java
-              microservices, AI-powered tools, and full-stack platforms at{' '}
-              <strong>Capgemini</strong>. I work across the full lifecycle — design, build,
-              instrument, and ship.
+              I build backend systems that other teams can trust. At <strong>Capgemini</strong> I own
+              the path from design to production: Java microservices, event pipelines, tracing, and
+              the AI agents that make messy upgrades cheaper.
             </p>
             <p>
-              My work spans building AI agents for legacy code migration, designing microservices
-              handling <strong>10K+ req/min</strong>, instrumenting distributed systems with{' '}
-              <strong>AWS ADOT</strong>, and shipping Kafka pipelines with sub-0.01% failure rates.
+              Recent work includes agents that refactor legacy code to <strong>Java 21/25</strong>,
+              onboarding tooling that cuts ramp-up by <strong>45%</strong>, GraphQL over REST to drop
+              round-trips by <strong>35%</strong>, and Kafka with retries + DLQs at{' '}
+              <strong>&lt;0.01%</strong> failure.
             </p>
             <p>
-              Outside work I run{' '}
+              Off hours I teach DSA on{' '}
               <a href="https://www.youtube.com/@AlgorithmArena" target="_blank" rel="noreferrer">
                 Algorithm Arena
               </a>{' '}
-              on YouTube — 150+ DSA tutorials — and grind LeetCode to keep problem-solving sharp.
+              (150+ videos) and keep a serious LeetCode streak — I like problems that have a clean
+              answer and systems that do not.
             </p>
             <p>
-              AWS Certified Cloud Practitioner &middot; Azure AZ-900 &middot; MCA from Jain
-              University (CGPA 8.0).
+              AWS Cloud Practitioner · Azure AZ-900 · MCA, Jain University (CGPA 8.0).
             </p>
           </div>
 
           <div className="about-stats">
             <div className="about-stat reveal reveal-delay-1">
               <div className="about-stat-value"><CountUp target={2} />+</div>
-              <div className="about-stat-label">Years professional experience</div>
+              <div className="about-stat-label">Years shipping in enterprise</div>
             </div>
             <div className="about-stat reveal reveal-delay-2">
               <div className="about-stat-value">10K+</div>
-              <div className="about-stat-label">Requests / min in production</div>
+              <div className="about-stat-label">Req/min on live services</div>
             </div>
             <div className="about-stat reveal reveal-delay-3">
               <div className="about-stat-value"><LeetCodeSolved username="worms_sama" /></div>

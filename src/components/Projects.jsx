@@ -1,86 +1,116 @@
 import React from 'react';
 import { Github, ExternalLink } from 'lucide-react';
 
-const projects = [
+const featured = [
   {
-    title: 'InterviewPal — AI Mock Interview & ATS Resume Tool',
-    desc: 'Full-stack platform with React + Java Spring Boot — parses resumes, scores ATS compatibility, and runs mock interviews via Gemini AI. Deployed on AWS EC2 behind Nginx with TLS — 99.5% uptime, handles 500+ concurrent users.',
+    title: 'InterviewPal — AI mock interviews & ATS scoring',
+    desc: 'React + Spring Boot. Parses resumes, scores ATS fit, and runs Gemini-powered mock interviews. Live on AWS EC2 + Nginx + TLS — 99.5% uptime, 500+ concurrent users.',
     tags: ['Java', 'Spring Boot', 'React', 'Gemini AI', 'AWS EC2', 'Nginx', 'Docker', 'PostgreSQL', 'JWT'],
     live: 'https://interview-pal.duckdns.org/',
+    art: 'project-art-a',
+    url: 'interview-pal.duckdns.org',
   },
   {
     title: 'Visual System Design Simulator',
-    desc: 'React + TypeScript drag-and-drop canvas with 30+ components (EC2, Redis, Kafka, CDN, etc.). Spring Boot REST API for designs, challenges (RPS/latency/budget), and prebuilt templates. Web-worker simulation engine keeps UI smooth under heavy interaction.',
-    tags: ['Java', 'Spring Boot', 'React', 'TypeScript', 'Tailwind CSS', 'Docker', 'AWS EC2', 'Nginx'],
+    desc: 'Drag-and-drop canvas with 30+ infra pieces (EC2, Redis, Kafka, CDN). Spring Boot API for designs, RPS/latency/budget challenges, and templates. Web-worker sim keeps the UI snappy.',
+    tags: ['Java', 'Spring Boot', 'React', 'TypeScript', 'Tailwind', 'Docker', 'AWS'],
     live: 'https://system-design.duckdns.org/',
+    art: 'project-art-b',
+    url: 'system-design.duckdns.org',
   },
+];
+
+const more = [
   {
     title: 'Theater Management System',
-    desc: 'Role-based booking platform (admin / manager / customer) with real-time seat inventory and concurrency control to prevent double-bookings under high traffic.',
-    tags: ['Java', 'Spring Boot', 'MySQL', 'REST APIs', 'JWT', 'Thymeleaf'],
+    desc: 'Role-based booking (admin / manager / customer) with real-time seat inventory and concurrency control so double-bookings die under load.',
+    tags: ['Java', 'Spring Boot', 'MySQL', 'JWT', 'Thymeleaf'],
     github: 'https://github.com/Parikshith-G/TheaterManagementSystem',
   },
   {
     title: 'RFP Automation Platform',
-    desc: 'Automated RFP document generation and vendor scoring with Spring Boot — cut manual processing by 70%. Modular template engine for dynamic PDF generation with customisable scoring criteria.',
-    tags: ['Java', 'Spring Boot', 'PostgreSQL', 'REST APIs', 'PDF Generation', 'Docker'],
+    desc: 'Generates RFP docs and scores vendors — 70% less manual processing. Modular templates, dynamic PDFs, custom scoring rules.',
+    tags: ['Java', 'Spring Boot', 'PostgreSQL', 'PDF', 'Docker'],
     github: 'https://github.com/Parikshith-G/RFP',
   },
   {
     title: 'RBAC Auth System',
-    desc: 'Role-based access control system with JWT authentication, fine-grained permission management, and secure API endpoints across a Spring Boot + Angular stack.',
+    desc: 'JWT auth, fine-grained permissions, and locked-down APIs on Spring Boot + Angular.',
     tags: ['Java', 'Spring Boot', 'Angular', 'JWT', 'PostgreSQL'],
     github: 'https://github.com/Parikshith-G',
   },
   {
-    title: 'AI-Driven Flappy Bird',
-    desc: 'Flappy Bird AI using the NEAT (NeuroEvolution of Augmenting Topologies) algorithm — agents evolve from scratch to clear pipes without any hardcoded rules.',
-    tags: ['Python', 'NEAT', 'Pygame', 'AI/ML'],
-    github: 'https://github.com/Parikshith-G',
-  },
-  {
-    title: 'Cryptography Web App',
-    desc: 'Django-based web application demonstrating classical and modern cryptographic algorithms — Caesar, Vigenère, RSA, AES — with interactive encryption/decryption UI.',
-    tags: ['Python', 'Django', 'HTML', 'CSS'],
-    github: 'https://github.com/Parikshith-G',
-  },
-  {
     title: 'E-Commerce Platform',
-    desc: 'Full-stack MERN e-commerce platform with product catalog, cart, order management, and admin dashboard. Includes JWT auth and RESTful API.',
+    desc: 'MERN store with catalog, cart, orders, admin dashboard, JWT, and REST APIs.',
     tags: ['MongoDB', 'Express', 'React', 'Node.js', 'JWT'],
     github: 'https://github.com/Parikshith-G',
   },
 ];
 
+function Links({ p }) {
+  return (
+    <div className="project-links">
+      {p.live && (
+        <a href={p.live} target="_blank" rel="noreferrer" className="project-link" aria-label="Live demo">
+          <ExternalLink size={14} />
+        </a>
+      )}
+      {p.github && (
+        <a href={p.github} target="_blank" rel="noreferrer" className="project-link" aria-label="GitHub">
+          <Github size={14} />
+        </a>
+      )}
+    </div>
+  );
+}
+
 export default function Projects() {
   return (
     <section className="section" id="projects">
-      <p className="section-label reveal">Projects</p>
-      <h2 className="section-title reveal">Things I've Built</h2>
+      <p className="section-label reveal">Work</p>
+      <h2 className="section-title reveal">Live products, not homework</h2>
+      <p className="section-kicker reveal">
+        Click the live badges. These are running on the internet, not in a screenshot.
+      </p>
       <div className="section-divider reveal" />
-      <div className="projects-grid">
-        {projects.map((p, i) => (
-          <div className={`project-card reveal reveal-delay-${(i % 3) + 1}`} key={i}>
-            <div className="project-header">
-              <div className="project-title">{p.title}</div>
-              <div className="project-links">
-                {p.live && (
-                  <a href={p.live} target="_blank" rel="noreferrer" className="project-link" aria-label="Live demo">
-                    <ExternalLink size={13} />
-                  </a>
-                )}
-                {p.github && (
-                  <a href={p.github} target="_blank" rel="noreferrer" className="project-link" aria-label="GitHub">
-                    <Github size={13} />
-                  </a>
-                )}
+
+      <div className="projects-featured">
+        {featured.map((p, i) => (
+          <article className={`project-featured reveal reveal-delay-${i + 1}`} key={p.title}>
+            <div className={`project-art ${p.art}`}>
+              <span className="live-badge">Live</span>
+              <div className="project-window">
+                <div className="project-dots"><i /><i /><i /></div>
+                <div className="project-url">{p.url}</div>
               </div>
+            </div>
+            <div className="project-body">
+              <div className="project-header">
+                <h3 className="project-title">{p.title}</h3>
+                <Links p={p} />
+              </div>
+              <p className="project-desc">{p.desc}</p>
+              <div className="project-tags">
+                {p.tags.map((t) => <span className="tag tag-neutral" key={t}>{t}</span>)}
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <p className="projects-more-title reveal">More builds</p>
+      <div className="projects-grid">
+        {more.map((p, i) => (
+          <article className={`project-card reveal reveal-delay-${(i % 3) + 1}`} key={p.title}>
+            <div className="project-header">
+              <h3 className="project-title">{p.title}</h3>
+              <Links p={p} />
             </div>
             <p className="project-desc">{p.desc}</p>
             <div className="project-tags">
-              {p.tags.map((t, j) => <span className="tag tag-neutral" key={j}>{t}</span>)}
+              {p.tags.map((t) => <span className="tag tag-neutral" key={t}>{t}</span>)}
             </div>
-          </div>
+          </article>
         ))}
       </div>
     </section>

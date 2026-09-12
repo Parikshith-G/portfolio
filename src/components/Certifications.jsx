@@ -7,14 +7,14 @@ const certs = [
     title: 'AWS Certified Cloud Practitioner',
     items: ['Amazon Web Services'],
     link: 'https://github.com/Parikshith-G/resume/blob/main/AWS%20Certified%20Cloud%20Practitioner.pdf',
-    linkLabel: 'View Certificate',
+    linkLabel: 'View certificate',
   },
   {
     category: 'Cloud',
-    title: 'Microsoft Certified: Azure Fundamentals (AZ-900)',
+    title: 'Microsoft Azure Fundamentals (AZ-900)',
     items: ['Microsoft Azure'],
     link: 'https://github.com/Parikshith-G/resume/blob/main/Axure%20az%20900%20certificate.pdf',
-    linkLabel: 'View Certificate',
+    linkLabel: 'View certificate',
   },
   {
     category: 'Algorithms',
@@ -24,17 +24,17 @@ const certs = [
   {
     category: 'AI / ML',
     title: 'Machine Learning Specialization',
-    items: ['Machine Learning — Andrew Ng (Coursera)', 'Deep Learning Specialization — Andrew Ng', 'META Data Analytics'],
+    items: ['Andrew Ng ML + Deep Learning', 'META Data Analytics'],
   },
   {
     category: 'Programming',
     title: 'Golang Specialization',
-    items: ['Getting Started with Go (Coursera)', 'Functions, Methods & Interfaces in Go', 'Concurrency in Go (Coursera)'],
+    items: ['Getting Started with Go', 'Concurrency in Go'],
   },
   {
     category: 'Framework',
-    title: 'Spring Boot & Professional Development',
-    items: ['Spring Boot — Udemy', 'Agile Development — LinkedIn Learning'],
+    title: 'Spring Boot & Agile',
+    items: ['Spring Boot — Udemy', 'Agile — LinkedIn Learning'],
   },
 ];
 
@@ -43,15 +43,16 @@ export default function Certifications() {
     <div className="section-alt" id="certifications">
       <div className="section-alt-inner">
         <p className="section-label reveal">Certifications</p>
-        <h2 className="section-title reveal">Credentials</h2>
+        <h2 className="section-title reveal">Credentials on the record</h2>
+        <p className="section-kicker reveal">Cloud plus algorithms — the combo most JDs ask for.</p>
         <div className="section-divider reveal" />
         <div className="cert-grid">
           {certs.map((c, i) => (
-            <div className={`cert-card reveal reveal-delay-${(i % 3) + 1}`} key={i}>
+            <div className={`cert-card reveal reveal-delay-${(i % 3) + 1}`} key={c.title}>
               <div className="cert-category">{c.category}</div>
               <div className="cert-title">{c.title}</div>
               <ul className="cert-items">
-                {c.items.map((item, j) => <li key={j}>{item}</li>)}
+                {c.items.map((item) => <li key={item}>{item}</li>)}
               </ul>
               {c.link && (
                 <a href={c.link} target="_blank" rel="noreferrer" className="cert-link">

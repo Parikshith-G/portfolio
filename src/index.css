@@ -1,32 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --bg:      #0c0c0c;
-  --bg2:     #101010;
-  --bg3:     #141414;
-  --card:    #111111;
-  --border:  #1f1f1f;
-  --border2: #2e2e2e;
-
-  --accent:  #e2e2e2;   /* near-white — used sparingly */
-  --accent2: #c0c0c0;
-  --accent3: #a0a0a0;
-
-  --green:   #4ade80;
-  --text:    #f0f0f0;
-  --muted:   #4a4a4a;
-  --muted2:  #888888;
+  --bg: #05060a;
+  --bg2: #080a12;
+  --bg3: #0c101c;
+  --card: rgba(14, 18, 32, 0.72);
+  --border: rgba(148, 163, 184, 0.12);
+  --border2: rgba(94, 234, 212, 0.28);
+  --accent: #5eead4;
+  --accent-dim: rgba(94, 234, 212, 0.14);
+  --violet: #a78bfa;
+  --text: #f4f6fb;
+  --muted: #8b95a8;
+  --muted2: #c5cddc;
+  --green: #4ade80;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Outfit', sans-serif;
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
@@ -34,21 +32,26 @@ body {
   overflow-x: hidden;
 }
 
-::selection { background: rgba(129,140,248,0.2); color: var(--text); }
+::selection { background: rgba(94, 234, 212, 0.28); color: var(--text); }
 
-::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 4px; }
+::-webkit-scrollbar-thumb { background: #2a3348; border-radius: 4px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
 
-/* ── SCROLL REVEAL ───────────────────────────────── */
 .reveal {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.6s cubic-bezier(0.16,1,0.3,1), transform 0.6s cubic-bezier(0.16,1,0.3,1);
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 .reveal-delay-1 { transition-delay: 0.08s; }
 .reveal-delay-2 { transition-delay: 0.16s; }
 .reveal-delay-3 { transition-delay: 0.24s; }
 .reveal-delay-4 { transition-delay: 0.32s; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .hero-tag-dot, .available-dot, .hero-cursor { animation: none; }
+}

@@ -2,13 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
 const links = [
-  { label: 'About',    href: '#about' },
+  { label: 'About', href: '#about' },
   { label: 'Experience', href: '#experience' },
-  { label: 'Skills',   href: '#skills' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Certs',    href: '#certifications' },
-  { label: 'Contact',  href: '#contact' },
+  { label: 'Skills', href: '#skills' },
+  { label: 'Work', href: '#projects' },
+  { label: 'Certs', href: '#certifications' },
+  { label: 'Contact', href: '#contact' },
 ];
+
+const resumeHref = `${import.meta.env.BASE_URL}Parikshith.G.pdf`;
 
 export default function Navigation() {
   const [active, setActive] = useState('');
@@ -38,22 +40,25 @@ export default function Navigation() {
     <>
       <nav className="nav">
         <a href="#" className="nav-logo">Parikshith <span>G</span></a>
-        <ul className="nav-links">
-          {links.map(l => (
-            <li key={l.href}>
-              <a
-                href={l.href}
-                className={`nav-link${active === l.href.slice(1) ? ' active' : ''}`}
-                onClick={(e) => { e.preventDefault(); handleClick(l.href); }}
-              >
-                {l.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-        <button className="nav-mobile-btn" onClick={() => setMobileOpen(o => !o)} aria-label="Toggle menu">
-          {mobileOpen ? <X size={20} /> : <Menu size={20} />}
-        </button>
+        <div className="nav-right">
+          <ul className="nav-links">
+            {links.map(l => (
+              <li key={l.href}>
+                <a
+                  href={l.href}
+                  className={`nav-link${active === l.href.slice(1) ? ' active' : ''}`}
+                  onClick={(e) => { e.preventDefault(); handleClick(l.href); }}
+                >
+                  {l.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <a href={resumeHref} download className="nav-resume">Resume</a>
+          <button className="nav-mobile-btn" onClick={() => setMobileOpen(o => !o)} aria-label="Toggle menu">
+            {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
       </nav>
       {mobileOpen && (
         <div className="nav-mobile-menu">
@@ -67,6 +72,7 @@ export default function Navigation() {
               {l.label}
             </a>
           ))}
+          <a href={resumeHref} download className="nav-link">Download Resume</a>
         </div>
       )}
     </>
